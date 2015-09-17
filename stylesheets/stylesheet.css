@@ -30,6 +30,7 @@ a {
   .btn + .btn {
     margin-left: 1rem; }
 
+/*Hyperlink actions*/
 .btn:hover {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
@@ -107,7 +108,7 @@ a {
   .project-tagline {
     font-size: 1rem; } }
 
-/*Main Body of Text in the Webpage*/
+/*Main Body of Text in the Webpage, including style, alignment, font*/
 .main-content :first-child {
   margin-top: 0; }
 .main-content img {
