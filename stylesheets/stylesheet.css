@@ -25,6 +25,11 @@ body {
   line-height: 1.5;
   color: #606c71; }
 
+img.resize{
+   max-width:250px;
+   max-height:250px;
+}
+
 /*hyperlink colors*/
 a {
   color: #1e6bb8;
