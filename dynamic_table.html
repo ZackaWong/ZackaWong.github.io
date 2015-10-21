@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+    91.461 Assignment 5:  Dynamic Tables
+          Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
+          Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
+
+    CHANGELOG:
+    10/20/15:  Created Change log for Dynamic tables webpage app.
+
+    Sources used:
+    http://www.w3schools.com/html/html_forms.asp
+    
+    I used Codacademy to assist me in the development of this webapp.
+    I really like how I can clean and design CSS on the fly instead of constantly
+    pushing, pulling, or compiling anything.
+    you can view my codebit and source code (neatly) here
+    https://www.codecademy.com/Salamanz/codebits/rXIhXO
+-->
+<html>
+    <head>
+    	<link rel='stylesheet' href='style.css'/>
+    	<script src='script.js'></script>
+    </head>
+    
+    <body>
+        <h1>Assignment 5</h1>
+            <p>  create a table completely dynamically based on parameters entered in an HTML form.  
+            </p>
+            
+        <form id = "TableParam" action="form_action.asp">
+        <h2> Input values for the row </h2>
+        <input type= "text" id = "input1" placeholder= "Row Min" >
+        <input type= "text" id = "input2" placeholder= "Row Max"> <br>
+        <h2> Input values for the column </h2>
+        <input type= "text" id = "input3" placeholder= "Column Min">
+        <input type= "text" id = "input4" placeholder= "Column Max"> <br><br>
+        
+        <input type= "button" value="Submit" onclick = "submitForm()">
+        </form>
+            
+        <p id="inputs">
+            <!-- Injected Input Code from script-->
+        </p>
+        <table id="dynamicTable">
+            <!-- Injected Table Code from script-->
+        </table>
+            
+    </body>
+</html>
