@@ -29,11 +29,11 @@ function submitForm() {
         document.getElementById("dynamicTable").innerHTML = "";
         return window.alert("Enter a value between [-12,12]");
     }
-    //Test for blank fields
-    if ((row_max === "") || (row_min === "") ||
-            (col_min === "") || (col_max === "")) {
+    //Test for NaN
+   if (isNaN(row_min) || isNaN(row_man) ||
+            isNaN(col_min) || isNaN(col_max)) {
         document.getElementById("dynamicTable").innerHTML = "";
-        return window.alert("Please enter a value in each field.");
+        return window.alert("Please enter correct integer values in each field.");
     }
     //Test for same row value and if minimum is greater than max
     if ((row_max == row_min) ||
