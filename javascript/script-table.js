@@ -43,7 +43,7 @@ function submitForm() {
     }
     //Test for same column value and if minimum is greater than max
     if ((col_min == col_max) ||
-            (col_min > row_max)) {
+            (col_min > col_max)) {
         document.getElementById("dynamicTable").innerHTML = "";
         return window.alert("Check column values:  Min is greater or equal to Max");
     }
