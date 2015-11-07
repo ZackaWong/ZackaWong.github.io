@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <!--
-    91.461 Assignment 6:  Dynamic Tables
+    91.461 Assignment 7:  JQ Validation
           Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
           Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
 
     CHANGELOG:
-    10/20/15:  Created Change log for Dynamic tables webpage app.
+    11/05/15:  Duplicated from dynamic_tables.html
+    11/06/15:  Changed inputs into fieldset and table form.  I liked the style JHeines used.
 
-    Sources used:
-    http://www.w3schools.com/html/html_forms.asp
-    
-    I used Codacademy to assist me in the development of this webapp.
-    I really like how I can clean and design CSS on the fly instead of constantly
-    pushing, pulling, or compiling anything.
-    you can view my codebit and source code (neatly) here
-    https://www.codecademy.com/Salamanz/codebits/rXIhXO
 -->
 <html>
     <head>
-    	<link rel='stylesheet' type="text/css" href='stylesheets/validation_style.css'/>
+        <link rel="stylesheet" type="text/css" href='validation_style.css'/>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    	<script src='javascript/jquery_val_script.js'></script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                buildTable(1, 10, 1, 10);
-            });
-        </script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+        <script src='javascript/tablegen_script.js'></script>
+        <script src="javascript/jq_validation.js"></script>  
     </head>
 
     <body>
         <h1>Assignment 6 <br>
-            create a table completely dynamically based on parameters entered in an HTML form.
+            creates a multiplication table of dynamic size between [-12, 12].
         </h1>
-        <fieldset>
-            <form id = "TableParam" action="form_action.asp">
+        <div>
+            <!-- Restructured input field with fieldset.  Thanks JHeines-->
+        <fieldset>  
+            <form id = "TableParam">
                 <table id ="inputtabl">
                     <tr>
                         <td> Input values for the row</td>
                     </tr>
                     <tr>
-                        <td><input type= "text" id = "input1" placeholder= "Row Min"></td>
-                        <td class="error" id="errmsg1"><td>
+                        <td><input name="minRow" id="minRow" type= "number" placeholder= "Row Min"></td>
                     </tr>
                     <tr>
-                        <td><input type= "text" id = "input2" placeholder= "Row Max"></td>
-                        <td class="error" id="errmsg2"><td>
+                        <td><input name="maxRow" id="maxRow" type= "number" placeholder= "Row Max"></td>
                     </tr>
+                    <tr><td><td></tr>
                     <tr>
                         <td> Input values for the column</td>
                     </tr>
                     <tr>
-                        <td><input type= "text" id = "input3" placeholder= "Column Min"></td>
-                        <td class="error" id="errmsg3"><td>
+                        <td><input name="minCol" id="minCol" type= "number" placeholder= "Column Min"></td>
                     </tr>
                     <tr>
-                        <td><input type= "text" id = "input4" placeholder= "Column Max"></td>
-                        <td class="error" id="errmsg4"><td>
+                        <td><input name="maxCol" id="maxCol" type= "number" placeholder= "Column Max"></td>
                     </tr>
                     <tr>
-                        <td><input type= "button" value="Submit" onclick = "submitForm()"></td>
+                        <td><input type= "submit" value="Generate Table"></td>
                     </tr>
                 </table>
-        </form>
-        <p id="inputs">
-            <!-- Injected Input Code from script-->
-        </p>
+            </form>
+            <p id="rangeDisplay">
+                <!-- Injected Input Code from script-->
+            </p>
         </fieldset>
+        </div>
+        <div>
         <table id="dynamicTable">
             <!-- Injected Table Code from script-->
         </table>
+        </div>
     </body>
 </html>

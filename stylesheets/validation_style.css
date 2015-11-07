@@ -1,47 +1,15 @@
 /******
-    91.461 Assignment 5:  Dynamic Tables
+    91.461 Assignment 7:  JQ Validation
           Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
           Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
 
     CHANGELOG:
-    10/20/15:  Created Change log for Dynamic tables webpage app.
-
+    11/05/15:   Modified version from style.css from assign 6
+    11/06/16:   Lazily added error highlighting.  definitely subject to change
+                Having trouble keeping the page static instead of dynamic.
     web sources and tutorials:
     https://css-tricks.com/complete-guide-table-element/
 *******/
-
-input {
-    box-shadow: 2px 2px 10px;
-    padding: 5px;
-    font-size: 12px;
-    
-}
-
-.error{
-    text-align: center;
-    float: right;
-}
-h1 {
-    text-align: center;
-}
-fieldset {  
-  display: block;
-  float: left ;
-  margin-right: 15px;
-  margin-left: 15px;
-  margin-top: 22px;
-  padding-right: 12em;
-  text-align: left;
-}
-.display {
-    font-size: 16px;
-    text-align: left;
-}
-
-#dynamicTable {
-
-    float: left;
-}
 
 body {
     text-shadow: 2px 2px 5px black;
@@ -52,7 +20,47 @@ body {
     background-attachment: fixed;
     color: white;
     font-family: Helvetica;
+    overflow-x: auto; /* horizontal scrolling not working...*/
+    overflow-y: auto; /* for vertical scrolling */
+    
 }
+
+/*cheap method for error highlighting.  I found a cool method but that
+ * involved the use of Bootstrap.*/
+.error{ 
+    padding-left: 5px;
+    color: #FF1111;
+    font-size: 12px;
+}
+h1 {
+    text-align: center;
+}
+
+input {
+    box-shadow: 2px 2px 10px;
+    padding: 5px;
+    font-size: 12px;
+    
+}
+
+/*make the fieldset big enough for all error messages*/
+fieldset {  
+  
+  float: left;
+  margin-left: 15px;
+  width: 26em;
+}
+
+/*having issues making this table stay static in size...*/
+#dynamicTable {
+    margin-left: 15px;
+    
+}
+.display {
+    font-size: 16px;
+    text-align: left;
+}
+
 p {
     font-size: 12px;
 }
@@ -60,15 +68,11 @@ h2 {
     font-size: 12px;
 }
 
+/*ew lime green. */
 input[type="submit"] {
     background: limegreen;
     color: black;
     
-}
-
-table{ 
-margin: 0 auto;
-padding-top: 30px;
 }
 
 .multabl td, th {  
@@ -79,6 +83,7 @@ text-align: center;
 font-size: 12px;
 background: #A9A9A9;
 }
+
 
 #zero {
     background: #808080;
@@ -99,3 +104,4 @@ border-color: white;
 #blankbox{
 opacity: 0.0;
 }
+
