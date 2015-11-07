@@ -24,8 +24,9 @@ body {
     overflow-y: auto; /* for vertical scrolling */
 }
 
-legend {
+#subtitle {
     text-align: center;
+    font-style: italic;
 }
 /*cheap method for error highlighting.  I found a cool method but that
  * involved the use of Bootstrap.*/
