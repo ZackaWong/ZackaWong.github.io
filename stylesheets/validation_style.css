@@ -22,9 +22,11 @@ body {
     font-family: Helvetica;
     overflow-x: auto; /* horizontal scrolling not working...*/
     overflow-y: auto; /* for vertical scrolling */
-    
 }
 
+legend {
+    text-align: center;
+}
 /*cheap method for error highlighting.  I found a cool method but that
  * involved the use of Bootstrap.*/
 .error{ 
