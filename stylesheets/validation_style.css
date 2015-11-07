@@ -25,6 +25,7 @@ body {
 }
 
 #subtitle {
+    float: center;
     text-align: center;
     font-style: italic;
 }
