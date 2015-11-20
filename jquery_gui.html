@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+    91.461 Assignment 8:  JQ GUI 
+          Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
+          Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
+
+    CHANGELOG:
+    11/05/15:  Duplicated from dynamic_tables.html
+    11/06/15:  Changed inputs into fieldset and table form.  I liked the style JHeines used.
+
+-->
+<html>
+    <head>
+        <link rel='stylesheet' href='validation_style.css'/>
+        <link rel='stylesheet' href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script src='tablegen_script.js'></script>
+        <script src="jq_validation.js"></script> 
+    </head>
+
+    <body>
+        <h1>Assignment 6 <br>
+            Creates a multiplication table of dynamic size between [-12, 12].
+        </h1>
+        
+        
+        
+        <div>
+            <!-- Restructured input field with fieldset.  Thanks JHeines-->
+        <fieldset>  
+            <form id = "TableParam">
+                <table id ="inputtabl">
+                    <tr>
+                        <td> Input values for the row</td>
+                    </tr>
+                    <tr>
+                        <td><input name="minRow" id="minRow" type= "number" placeholder= "Row Min"></td>
+                    </tr>
+                    <tr>
+                        <td><div id="minrowSlider"></div><br></td>
+                    </tr>
+                    <tr>
+                        <td><input name="maxRow" id="maxRow" type= "number" placeholder= "Row Max"></td>
+                    </tr>
+                    <tr>
+                        <td><div id="maxrowSlider"></div><br></td>
+                    </tr>
+                    <tr><td><td></tr>
+                    <tr>
+                        <td> Input values for the column</td>
+                    </tr>
+                    <tr>
+                        <td><input name="minCol" id="minCol" type= "number" placeholder= "Column Min"></td>
+                    </tr>
+                    <tr>
+                        <td><div id="mincolSlider"></div><br></td>
+                    </tr>
+                    <tr>
+                        <td><input name="maxCol" id="maxCol" type= "number" placeholder= "Column Max"></td>
+                    </tr>
+                    <tr>
+                        <td><div id="maxcolSlider"></div><br></td>
+                    </tr>
+                    <tr>
+                        <td><input type= "submit" value="Generate Table"></td>
+                    </tr>
+                </table>
+            </form>
+            <div id="rangeDisplay">
+                <!-- Injected Input Code from script-->
+            </div>
+
+            
+        </fieldset>
+        </div>
+        <div>
+        <table id="dynamicTable">
+            <!-- Injected Table Code from script-->
+        </table>
+        </div>
+        <script type="text/javascript">
+            
+        </script>
+    </body>
+</html>
