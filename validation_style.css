@@ -19,7 +19,6 @@
  left: 4px; top:4px; bottom: 16px;
 }
 
-
 #minrowSlider .ui-slider-handle ,
 #maxrowSlider .ui-slider-handle ,
 #mincolSlider .ui-slider-handle ,
@@ -28,6 +27,9 @@
  width:12px; height:16px; top:-4px;
 }
 
+#tabs{
+    float: bottom;
+}
 body {
     text-shadow: 2px 2px 5px black;
     background: url("http://wallpapercolor.net/wallpapers/subtle-wallpaper-14980.jpg");
