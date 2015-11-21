@@ -1,13 +1,15 @@
 /******
-    91.461 Assignment 7:  JQ Validation
+    91.461 Assignment 8:  JQ UI - Sliders and Tabs
           Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
           Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
 
     CHANGELOG:
     11/05/15:   Modified version from style.css from assign 6
-    11/06/16:   Lazily added error highlighting.  definitely subject to change
+    11/06/15:   Lazily added error highlighting.  definitely subject to change
                 Having trouble keeping the page static instead of dynamic.
     web sources and tutorials:
+    11/19/15:   Added CSS rules for sliders
+    11/21/15:   Added CSS rules for tabs
     https://css-tricks.com/complete-guide-table-element/
 *******/
 
@@ -27,8 +29,23 @@
  width:12px; height:16px; top:-4px;
 }
 
-#tabs{
-    float: bottom;
+#tabSpace{
+    float: left;
+    background: navy;
+    width: 50em;
+}
+
+div.table{
+    margin: 10px;
+    
+}
+
+button{
+    box-shadow: 2px 2px 10px;
+    padding: 5px;
+    font-size: 12px;
+    background: limegreen;
+    color: black;
 }
 body {
     text-shadow: 2px 2px 5px black;
@@ -63,17 +80,15 @@ input {
 }
 
 /*make the fieldset big enough for all error messages*/
-fieldset {  
-  
+fieldset {
   float: left;
-  margin-left: 15px;
+  //margin-left: 15px;
   width: 28em;
 }
 
 /*having issues making this table stay static in size...*/
 #dynamicTable {
-    margin-left: 15px;
-    
+    margin: 10px;
 }
 .display {
     font-size: 16px;

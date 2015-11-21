@@ -1,64 +1,85 @@
 //***********************************
-//    91.461 Assignment 7:  JQ Validation
+//    91.461 Assignment 8:  JQ Gui - Sliders and Tabs
 //          Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
 //          Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
 //
 //    CHANGELOG:
-//    11/05/15:  Changelog created.
-//    11/06/15:  Added LOTS OF CONTENT.
+//    11/18/15:  Duplicated from jq_validation.js
+//    11/19/15:  Added Slider functionality
+//    11/20/15:  Tweaked Slider functionality
+//    11/21/15:  Added Tab functionality, lots of bug and code fixes.
+//    
 //   
 //    Other sources used:
-//    jQuery Validation Plugin: Simple Validation (1/4) by CodeCast 
-//    https://www.youtube.com/watch?v=xNSQ3i-BWMo
+//    jQuery sliders Hotel room example:
+//    https://jqueryui.com/slider/#hotelrooms
+//   
 //    Greater Than validation method source
 //    http://stackoverflow.com/questions/14347177/how-can-i-validate-that-the-max-field-is-greater-than-the-min-field
 //    
 //***********************************
 
 //Not really the best method... but generates a default table at start
+
+
 $(function () {
     $(document).ready(function () {
         buildTable(1, 10, 1, 10);
-        table_inputs = document.getElementById("TableParam").elements;
-        table_inputs[0].value = 1;
-        table_inputs[1].value = 10;
-        table_inputs[2].value = 1;
-        table_inputs[3].value = 10;
-      
-        $(function () {
-            var sliderOpts = {
-                min: -20,
-                max: 20,
+        $(function slider() {
+            //Minimum row slider
+            $("#minrowSlider").slider({
+                min: -12,
+                max: 12,
                 animate: true,
-                //value: 0,
                 slide: function (event, ui) {
-                    $("#minRow").val(ui.values[0]);
-                    $("#maxRow").val(ui.values[1]);
-                    $("#minCol").val(ui.values[2]);
-                    $("#maxCol").val(ui.values[3]);
-                }
-                
-            };
-            $("#minrowSlider, #maxrowSlider, #mincolSlider, #maxcolSlider").slider(sliderOpts);  
-        });
-        $("#minRow").change(function() {
-            $( "#minrowSlider" ).slider("value", $(this).val() );
-        });
+                    $("#minRow").val(ui.value);
+                } 
+            });
+            $("#minRow").change(function() {
+                $("#minrowSlider").slider("value", this.value);
+            });
+            
+            //Max row slider
+            $("#maxrowSlider").slider({
+                min: -12,
+                max: 12,
+                animate: true,
+                slide: function (event, ui) {
+                    $("#maxRow").val(ui.value);
+                } 
+            });
+            $("#maxRow").change(function() {
+                $("#maxrowSlider").slider("value", this.value);
+            });
+            
+            //Min column slider
+            $("#mincolSlider").slider({
+                min: -12,
+                max: 12,
+                animate: true,
+                slide: function (event, ui) {
+                    $("#minCol").val(ui.value);
+                } 
+            });
+            $("#minCol").change(function() {
+                $("#mincolSlider").slider("value", this.value);
+            });
         
-        $("#maxRow").change(function() {
-            $( "#maxrowSlider" ).slider("value", $(this).val() );
+        //Max column slider
+            $("#maxcolSlider").slider({
+                min: -12,
+                max: 12,
+                animate: true,
+                slide: function (event, ui) {
+                    $("#maxCol").val(ui.value);
+                } 
+            });
+            $("#maxCol").change(function() {
+                $("#maxcolSlider").slider("value", this.value);
+            });
         });
-        
-        $("#minCol").change(function() {
-            $( "#mincolSlider" ).slider("value", $(this).val() );
-        });
-        
-        $("#maxCol").change(function() {
-            $( "#maxcolSlider" ).slider("value", $(this).val() );
-        });
-        
     });
-
+    
 //http://stackoverflow.com/questions/14347177/how-can-i-validate-that-the-max-field-is-greater-than-the-min-field
     $.validator.addMethod("greaterThan", function (value, element, param)
     {

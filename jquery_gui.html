@@ -7,86 +7,87 @@
     CHANGELOG:
     11/05/15:  Duplicated from dynamic_tables.html
     11/06/15:  Changed inputs into fieldset and table form.  I liked the style JHeines used.
-
+    11/18/15:  Duplicated from jquery_val_tables.html
+    11/21/15:  Major fixes to initial code.  Mostly in JS files.
 -->
 <html>
     <head>
-        <link rel='stylesheet' href='validation_style.css'/>
+        <link rel='stylesheet' type="text/css" href='stylesheets/jq_ui_style.css'/>
         <link rel='stylesheet' href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-        <script src='tablegen_script.js'></script>
-        <script src="jq_slider_and_tab.js"></script> 
+        <script src='javascript/tablegen_script.js'></script>
+        <script src="javascript/jq_slider_and_tab.js"></script> 
     </head>
 
     <body>
-        <h1>Assignment 6 <br>
-            Creates a multiplication table of dynamic size between [-12, 12].
+        <h1>Assignment 8 <br>
+            Creates a multiplication table of dynamic size between [-12, 12].<br>
+            now with slider and tabs!
         </h1>
-        
-        
-        
+
+
+
         <div>
             <!-- Restructured input field with fieldset.  Thanks JHeines-->
-        <fieldset>  
-            <form id = "TableParam">
-                <table id ="inputtabl">
-                    <tr>
-                        <td> Input values for the row</td>
-                    </tr>
-                    <tr>
-                        <td><input name="minRow" id="minRow" type= "number" placeholder= "Row Min"></td>
-                    </tr>
-                    <tr>
-                        <td><div id="minrowSlider"></div><br></td>
-                    </tr>
-                    <tr>
-                        <td><input name="maxRow" id="maxRow" type= "number" placeholder= "Row Max"></td>
-                    </tr>
-                    <tr>
-                        <td><div id="maxrowSlider"></div><br></td>
-                    </tr>
-                    <tr><td><td></tr>
-                    <tr>
-                        <td> Input values for the column</td>
-                    </tr>
-                    <tr>
-                        <td><input name="minCol" id="minCol" type= "number" placeholder= "Column Min"></td>
-                    </tr>
-                    <tr>
-                        <td><div id="mincolSlider"></div><br></td>
-                    </tr>
-                    <tr>
-                        <td><input name="maxCol" id="maxCol" type= "number" placeholder= "Column Max"></td>
-                    </tr>
-                    <tr>
-                        <td><div id="maxcolSlider"></div><br></td>
-                    </tr>
-                    <tr>
-                        <td><input type= "submit" value="Generate Table" onclick="gen_tabs();"></td>
-                    </tr>
-                </table>
-            </form>
-            <div id="rangeDisplay">
-                <!-- Injected Input Code from script-->
+            <fieldset>  
+                <form id = "TableParam">
+                    <table id ="inputtabl">
+                        <tr>
+                            <td> Input values for the row</td>
+                        </tr>
+                        <tr>
+                            <td><input name="minRow" id="minRow" type= "number" placeholder= "Row Min"></td>
+                        </tr>
+                        <tr>
+                            <td><div id="minrowSlider"></div><br></td>
+                        </tr>
+                        <tr>
+                            <td><input name="maxRow" id="maxRow" type= "number" placeholder= "Row Max"></td>
+                        </tr>
+                        <tr>
+                            <td><div id="maxrowSlider"></div><br></td>
+                        </tr>
+                        <tr><td><td></tr>
+                        <tr>
+                            <td> Input values for the column</td>
+                        </tr>
+                        <tr>
+                            <td><input name="minCol" id="minCol" type= "number" placeholder= "Column Min"></td>
+                        </tr>
+                        <tr>
+                            <td><div id="mincolSlider"></div><br></td>
+                        </tr>
+                        <tr>
+                            <td><input name="maxCol" id="maxCol" type= "number" placeholder= "Column Max"></td>
+                        </tr>
+                        <tr>
+                            <td><div id="maxcolSlider"></div><br></td>
+                        </tr>
+                        <tr>
+                            <td><input type= "submit" value="Generate Table"></td>
+                            <td><button onclick="clearTabs()">Clear All Previous Tabs</button></td>
+                        </tr>
+                    </table>
+                </form>
+                <div id="rangeDisplay">
+                    <!-- Injected Input Code from script-->
+                </div>
+            </fieldset>
+
+            <table id="dynamicTable">
+                <!-- Injected Table Code from script-->
+            </table>
+        </div>
+        <div id="tabWrapper">
+            <!-- Wrapper used to clear all content-->
+            <div id="tabSpace">
+                <!-- Injected Tab Code from script-->
+                <ul>
+                </ul>
             </div>
-        </fieldset>
         </div>
-        
-        <div>
-        <table id="dynamicTable">
-            <!-- Injected Table Code from script-->
-        </table>
-        </div>
-        
-        <br><br><br><br>
-        <br><br><br><br>
-        
-        <div id="tabs">
-          <ul>
-          </ul>
-        </div>
-        
+
     </body>
 </html>

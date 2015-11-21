@@ -1,19 +1,19 @@
 //***********************************
-//    91.461 Assignment 7:  JQ Validation
+//    91.461 Assignment 8:  JQ UI - Sliders and Tabs
 //          Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
 //          Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
 //
 //    CHANGELOG:
 //    11/05/15:  Same script file as script.js, just renamed
 //    11/06/15:  Removed all JS "if" test cases in place of JQ validation.
-//   
+//    11/21/15:  Added tab functionality and other fixes.
 //    Other sources used:
 //    http://www.w3schools.com/tags/tag_table.asp
 //    http://www.w3schools.com/jsref/jsref_parseint.asp ***to get absolute integer values
 //    An old Computing III program which generated a dynamic matrix
+//    jQuery append to Dynamically created tabs referenced code on line 85: 
+//    https://stackoverflow.com/questions/18572586/append-to-dynamically-created-tab
 //***********************************
-
-
 
 function submitForm() {
     //collect all results from the datatable
@@ -25,7 +25,8 @@ function submitForm() {
     var col_min = parseInt(table_inputs[2].value);
     var col_max = parseInt(table_inputs[3].value);
     //Test for numbers in the range of -12 and 12
-    buildTable(row_min, row_max, col_min, col_max);
+    tablehtml = buildTable(row_min, row_max, col_min, col_max);
+    genTabs(tablehtml);
 }
 
 function buildTable(row_min, row_max, col_min, col_max) {
@@ -75,6 +76,37 @@ function buildTable(row_min, row_max, col_min, col_max) {
         table += table_row;
     }
     //"inject" our table code into our html document
-    document.getElementById("dynamicTable").innerHTML = table;
-    document.getElementById("TableParam").reset();
+    //document.getElementById("dynamicTable").innerHTML = table;
+    $("#dynamicTable").html(table);
+    //document.getElementById("TableParam").reset();
+    return table;
+}
+
+function genTabs(tableHTML) {
+        num_tabs = $("#tabSpace li").length + 1;
+        $("#tabSpace").tabs();
+        $("div#tabSpace ul").append(
+            "<li><a href=\"#tab" + num_tabs + "\">Tab " + num_tabs + "</a>"
+            + "<span class='ui-icon ui-icon-close' role='presentation'></span></li>"    
+                );
+        
+        $("div#tabSpace").append(
+            "<div id=\"tab" + num_tabs + '"><table>' + tableHTML + "</table></div>"
+                );
+        $("#tabSpace").tabs("refresh");
+        
+        $( "#tabSpace" ).tabs("option", "active", -1);
+        
+        //taken straight from the Jquery UI tabs site: https://jqueryui.com/tabs/#manipulation
+        $( "#tabSpace" ).delegate( "span.ui-icon-close", "click", function() {
+            var panelID = $( this ).closest( "li" ).remove().attr( "aria-controls" );
+            $( "#" + panelID ).remove();
+            $( "#tabSpace" ).tabs("refresh");
+  });
+}
+
+function clearTabs() {
+    //easiest way I can think of removing tabs without having an anurism.
+    $("#tabWrapper").empty();
+    $("#tabWrapper").html("<div id=tabSpace><ul></ul><div>");
 }
