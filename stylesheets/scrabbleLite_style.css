@@ -36,13 +36,13 @@ body {  min-width:1500px; }
 
 /*double score empty tile*/
 #doubleTile {
-    background-image:url(https://github.com/ZackaWong/zackawong.github.io/ScrabbleImages/double_letter_square.png);
+    background-image:url(ScrabbleImages/double_letter_square.png);
     background-repeat: no-repeat;
 }
 
 /*triple score empty tile*/
 #tripleTile {
-    background-image:url(https://github.com/ZackaWong/zackawong.github.io/ScrabbleImages/triple_word_square.png);
+    background-image:url(ScrabbleImages/triple_word_square.png);
     background-repeat: no-repeat;
 }
 
@@ -68,7 +68,7 @@ body {  min-width:1500px; }
 #letterSpace {
     position: absolute;
     bottom: 0;
-    background-image: url(https://github.com/ZackaWong/zackawong.github.io/ScrabbleImages/scrabble_rack.png);
+    background-image: url(ScrabbleImages/scrabble_rack.png);
     background-repeat: no-repeat;
 }
 
