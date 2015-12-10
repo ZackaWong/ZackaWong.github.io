@@ -30,7 +30,7 @@ body {  min-width:1500px; }
 
 /*Normal empty scrabble tile*/
 #gameTile {
-    background-image:url(https://github.com/ZackaWong/zackawong.github.io/ScrabbleImages/plain_square.png);
+    background-image:url(ScrabbleImages/plain_square.png);
     background-repeat: no-repeat;
 }
 
