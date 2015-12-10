@@ -10,7 +10,7 @@ and open the template in the editor.
 
 body {  min-width:1500px; }
 
-//Encases the entire game inside a wrapper
+/*Encases the entire game inside a wrapper*/
 #wrapper {
     position: relative;
     margin: 0 auto;
@@ -18,7 +18,7 @@ body {  min-width:1500px; }
     height:75%;
 }
 
-//Encases the Game Board and Tile Rack of Scrabble
+/*Encases the Game Board and Tile Rack of Scrabble*/
 #gameSpace {
     float:left;
     position: relative;
@@ -28,25 +28,25 @@ body {  min-width:1500px; }
     text-align: center;
 }
 
-//Normal empty scrabble tile
+/*Normal empty scrabble tile*/
 #gameTile {
     background-image:url(ScrabbleImages/plain_square.png);
     background-repeat: no-repeat;
 }
 
-//double score empty tile
+/*double score empty tile*/
 #doubleTile {
     background-image:url(ScrabbleImages/double_letter_square.png);
     background-repeat: no-repeat;
 }
 
-//triple score empty tile
+/*triple score empty tile*/
 #tripleTile {
     background-image:url(ScrabbleImages/triple_word_square.png);
     background-repeat: no-repeat;
 }
 
-//empty tile properties
+/*empty tile properties*/
 .emptyTile{
     margin-top: 50px;
     display: inline-block;
@@ -54,7 +54,7 @@ body {  min-width:1500px; }
     width: 100px;
 }
 
-//highlights draggable and droppable spaces
+/*highlights draggable and droppable spaces*/
 .border {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -72,7 +72,7 @@ body {  min-width:1500px; }
     background-repeat: no-repeat;
 }
 
-//tiles for the game
+/*tiles for the game*/
 .letterTile {
     display: inline-block;
     position: relative;
