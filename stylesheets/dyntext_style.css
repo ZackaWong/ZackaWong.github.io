@@ -1,0 +1,85 @@
+/*
+Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
+Copyright © 2015 by Zachary Wong.  All rights reserved.
+Updated September 3, 2015 1:15PM
+*/
+/*    Created on : Oct 1, 2015, 12:25:49 PM
+    Author     : zak-linux
+*/
+
+/*defined text used one webpage*/
+body{
+    font-family: Times New Roman;
+}
+
+/*header alignments*/
+section.page-header, 
+.header{
+    text-align: center;
+}
+
+/*customized settings for titles*/
+#title {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/*customized settings for authors, smaller than title*/
+#author {
+    font-size: 24px;
+}
+
+/*draws a textbox around the prologue text.
+text is center aligned.
+textbox is center aligned.*/
+#prologue{
+    line-height: 150%;
+    float: top;
+    width: 400px;
+    padding: 25px;
+    border: 25px solid navy;
+    background: #C1DAD6;
+    margin: auto;
+}
+
+/*Romeo's character is in RED text and BOLDED.
+right-justify all text after the colon 100px*/
+#char1 {
+    color: red;
+    font-weight: bold;
+    display: inline-block; width: 100px;
+}
+
+/*Benvolio's character is in BLUE text and BOLDED.
+right-justify all text after the colon 100px*/
+#char2 {
+    color: blue;
+    font-weight: bold;
+    display: inline-block; width: 100px;
+}
+
+/*custom case when an ARRAY is being printed.
+right-justify all text after the colon 100px*/
+#tab {
+    display: inline-block; width: 100px;
+}
+
+/*custom subtitles appened to the title of Act 1*/
+#subtitle {
+    font-size: 24px;
+    font-style: italic;
+}
+
+.para {
+    display: block;
+}
+
+/*original source referenced from Jesse Heine's "TextStyles-v8.css*/
+#Scene_img {
+    max-width:500px;
+    max-height:500px;
+    float: right;
+    border: 3px solid black ;
+    padding: 10px ;
+    margin: 30px 0px 10px 20px ;  /* T R B L */
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--
+Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
+Copyright © 2015 by Zachary Wong.  All rights reserved.
+Updated October 5, 2015 1:15PM
+-->
+
+<html>
+    <head>
+        <title>Formatting Dynamic Text</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type= "text/css" href="stylesheets/stylesheet.css" media="screen">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <!-- load the JSON file containing the text of Act1 Scene1 of Romeo and Juliet -->
+        <script type="text/javascript">
+            var story;
+
+            // Note to advanced students:
+            //   Do *NOT* use the jQuery getJSON function here, because in this 
+            // application the AJAX call has to be synchronous (that is, we need to 
+            // wait for it to be done before continuing), and the getJSON function 
+            // is always asynchronous.  Reference:
+            // http://stackoverflow.com/questions/2765411/is-it-possible-to-set-asyncfalse-to-getjson-call
+            //   The other approach is to change the global jQuery ajaxSetup option, 
+            // but this is controversial, as discussed on the referenced page.
+            
+            jQuery.ajax({
+                async: false,
+                dataType: "json",
+                url: "RomeoJulietActOne.json",
+                success: function (data) {
+                    story = data;
+                }
+            });
+
+            jQuery(document).ready(function () {
+                placeContent();
+            });
+        </script>
+
+        <!-- script to determine browser type and set first paragraph class appropriately -->
+        <script type="text/javascript">
+            var strFirstParaClass = "";
+            var strNavString = navigator.userAgent;
+            // console.log( navigator.userAgent ) ;
+            // console.log( strNavString ) ;
+            if (strNavString.indexOf("Firefox") !== -1) {
+                strFirstParaClass = "Firefox";
+            } else if (strNavString.indexOf("Chrome") !== -1) {
+                strFirstParaClass = "Chrome";
+            } else if (strNavString.indexOf("Safari") !== -1) {
+                strFirstParaClass = "Safari";
+            }
+        </script>
+        <!-- All code above is preliminary code set up JSON and javascript.  I took this code 
+        snippit from Jesse Heine's "Formatting Dynamic Text Sample" at 
+        https://teaching.cs.uml.edu/~heines/91.461/91.461-2010-11f/CSSTests/FormattingText/build/web/FormattingText-v9_Fall2014.html
+        -->
+        
+        <!-- script to place JSON text in the placeholder on this page -->
+        <script type="text/javascript">
+            function placeContent() {
+            var strContent = "";
+            /**The heiarchy of my JSON works like this:
+            object ->  metadata ->  title
+                                    chapter
+                                    author
+                                    characters
+                   ->  text     ->  prologue
+                                    bomeoDialog
+                                    benvolioDialog
+            the full JSON can be nicely viewed at: http://www.jsoneditoronline.org/?id=88fd07370732dc9d39c7d0db992c12cd
+            **/
+           
+           //Display Title and Author where Author is smaller text than the Title and using CSS ID's.
+            strContent += "<h1 class='header' id='title'>" + story.metadata.title + ": " + story.metadata.chapter + "</h1>";
+            strContent += "<h1 class='header' id= 'author'>" + "by " + story.metadata.author + "</h1>";
+            
+            //Display the Prologue inside it's own textbox.  The text inside is center aligned and
+            //The textbox itself is center aligned with the whole webpage.  colors are customized.
+            strContent += "<div class='header' id= 'prologue'" + strFirstParaClass + "\">";
+            strContent += "<span id='title'>Prologue</span><br><br>";
+            for (var para = 0 ; para < story.text.prologue.length ; para++) {                
+                strContent += story.text.prologue[para] + "<br>";
+            }
+            strContent += "</div>";
+            
+            //Displays an image of Act1 Scene1, the starting fight.  This image was taken from:
+            //https://upload.wikimedia.org/wikipedia/commons/d/da/Scene-1.jpg
+                   strContent += "<img id='Scene_img' src='images/Scene-1.jpg' alt='scene_1.jpg'>";
+
+                   //Title of Act 1 shares same characteristics as the Prologue title and Top title.
+                   strContent += "<div id='title'>Scene I <span id='subtitle'> (Excerpt of Romeo and Benvolio)</span></div>";
+
+                   //The fun stuff.  For this assignment, I decided to only do an EXCERPT of Act1 Scene1.
+                   //In my JSON, I seperated the lines of each character into their own object/array.
+                   //My script essentially "zips" the two together since its back to back dialogue.
+                   //I colored Romeo's name to be RED.
+                   //I colored Benvolio's name to be BLUE.
+                   for (var para = 0; para < story.text.romeoDialog.length; para++) {
+                       strContent += "<p class='para'" + strFirstParaClass + "\">";
+                       strContent += "<span id='char1'>" + story.metadata.characters[0] + ":</span>";
+
+                       //I needed a test for when I encounter an array of text in my scripts.  I found this test on stackoverflow
+                       //at this location: http://stackoverflow.com/questions/4775722/check-if-object-is-array
+                       //This test is required for the case of a monologue or a sonnet.  These blocks of texts are
+                       //considered ONE dialogue inside the romeoDialogue.  It really is another array of LINES.
+
+                       //If the dialogue is an ARRAY, extract all necessary lines from that array.
+                       //ELSE, the dialogue is just a SINGLE LINE, and extract that single line.
+                       if (Object.prototype.toString.call(story.text.romeoDialog[para]) === '[object Array]') {
+                           for (var ext = 0; ext < story.text.romeoDialog[para].length; ext++) {
+                               if (ext >= 1) {
+                                   strContent += "<span id='tab'></span>";
+                               }
+                               strContent += story.text.romeoDialog[para][ext] + "<br>";
+                           }
+                       } else {
+                           strContent += story.text.romeoDialog[para];
+                       }
+
+                       strContent += "</p>";
+                       strContent += "<p class='para'" + strFirstParaClass + "\">";
+                       strContent += "<span id='char2'>" + story.metadata.characters[1] + ":</span>";
+
+                       //If the dialogue is an ARRAY, extract all necessary lines from that array.
+                       //ELSE, the dialogue is just a SINGLE LINE, and extract that single line.
+                       if (Object.prototype.toString.call(story.text.benvolioDialog[para]) === '[object Array]') {
+                           for (var ext = 0; ext < story.text.benvolioDialog[para].length; ext++) {
+                               if (ext >= 1) {
+                                   strContent += "<span id='tab'></span>";
+                               }
+                               strContent += story.text.benvolioDialog[para][ext] + "<br>";
+                           }
+                       } else {
+                           strContent += story.text.benvolioDialog[para] + "<br>";
+                       }
+                       strContent += "</p>";
+                   }
+
+                   // place dynamic content on page
+                   // document.getElementById( "content" ).innerHTML = strContent ;
+                   jQuery("#content").html(strContent);
+               }
+        </script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section class="header">
+            <p>I am Zachary Wong</p>
+        </section>
+        <div id="content"></div>
+    </body>
+</html>

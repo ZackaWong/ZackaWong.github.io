@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 9, 2015, 6:47:08 PM
+    Author     : Zach
+*/
+body {
+        font-family: Helvetica;
+        background-color: grey;
+        background: url("http://i.imgur.com/R81Att1.png");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+
+p {
+    font-size: 24px;
+}
+
+html, body, #wrapper{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body > #wrapper {
+    height: auto;
+    min-height: 100%;
+}
+
+#content {
+    padding-left: 320px;
+    padding-right: 75px;
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+.post{ 
+    background: rgba(255, 255, 255, .7);
+    padding: 10px 20px 15px 20px ;
+    border-radius: 25px ;
+    border: 2px solid grey ;
+}
+
+/* sidebar modified from source here: http://jsfiddle.net/ShawnGSweeney/BqJDW/1/ */
+.sidebar {
+    position: fixed;
+    z-index: 250;
+}
+
+.sidebar {
+    width: 150px;
+    float:left;
+    padding: 10px 10px 10px 10px;
+    left:75px;
+    background-color: #E6E6E6;
+    top:10%;
+    opacity: .9;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 20px;
+}
+
+/* nav bar css learned/tweaked from w3schools
+tutorial here: http://www.w3schools.com/css/css_navbar.asp */
+ul.assn {
+    list-style-type: none;
+    margin: 0 auto;
+    padding-bottom: 0;
+    text-align: center ;
+    position: relative;
+    display: inline ;
+}
+li.assn {
+    padding: 0 0px 0 16px ;
+       
+}
+a.assn:link, a.assn:visited {
+    display: block;
+    width: 110px;
+    color: #FFFFFF;
+    background-color: #E6B8B8;
+    text-align: center;
+    padding: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500 ;
+}
+a.assn:hover, a.assn:active {
+    background-color: #B89393;
+}
+
+

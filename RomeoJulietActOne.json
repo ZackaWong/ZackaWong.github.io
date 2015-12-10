@@ -1,0 +1,74 @@
+{
+    "information and comments": {
+        "info": ["Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu",
+            "Copyright © 2015 by Zachary Wong.  All rights reserved.",
+            "Updated September 3, 2015 1:15PM",
+            "Visual representation of my objects can be found at this link",
+            "http://www.jsoneditoronline.org/?id=88fd07370732dc9d39c7d0db992c12cd",
+            "romeoDialog and benvolioDialog are arrays of DIALOGS or the official term, VERSES",
+            "if a VERSE has ALOT of lines like in a monologue or sonnet, it is stored",
+            "into an array.  it is still considered ONE DIALOG",
+            "For simplicity sakes right now, I chose 7 VERSES for Romeo and Benvolio"
+        ]
+    },
+    "metadata": {
+        "string": "Hello World",
+        "title": "Romeo and Juliet",
+        "chapter": "Act I",
+        "author": "William Shakespeare",
+        "characters": [
+            "Romeo",
+            "Benvolio"
+        ]
+    },
+    "text": {
+        "prologue": [
+            "Two households, both alike in dignity,",
+            "In fair Verona, where we lay our scene,",
+            "From ancient grudge break to new mutiny,",
+            "Where civil blood makes civil hands unclean.",
+            "From forth the fatal loins of these two foes,",
+            "A pair of star-cross'd lovers take their life;",
+            "Whose misadventured piteous overthrows",
+            "Do with their death bury their parents' strife.",
+            "The fearful passage of their death-mark'd love,",
+            "And the continuance of their parents' rage,",
+            "Which, but their children's end, nought could remove,",
+            "Is now the two hours' traffic of our stage;",
+            "The which if you with patient ears attend,",
+            "What here shall miss, our toil shall strive to mend."
+        ],
+        "romeoDialog": [
+            "Is the day so young?",
+            "Ay me! sad hours seem long.  Was that my father that went hence so fast?",
+            "Not having that, which, having, makes them short.",
+            "Out--",
+            "Out of her favour, where I am in love.",
+            [
+                "Alas, that love, whose view is muffled still,",
+                "Should, without eyes, see pathways to his will!",
+                "Where shall we dine? O me! What fray was here?",
+                "Yet tell me not, for I have heard it all.",
+                "Here's much to do with hate, but more with love.",
+                "Why, then, O brawling love! O loving hate!",
+                "O any thing, of nothing first create!",
+                "O heavy lightness! serious vanity!",
+                "Mis-shapen chaos of well-seeming forms!",
+                "Feather of lead, bright smoke, cold fire,",
+                "sick health!",
+                "Still-waking sleep, that is not what it is!",
+                "This love feel I, that feel no love in this.",
+                "Dost thou not laugh?"
+            ]
+        ],
+        "benvolioDialog": [
+            "Good-morrow, cousin.",
+            "But new struck nine.",
+            "It was. What sadness lengthens Romeo's hours?",
+            "In love?",
+            "Of love?",
+            "Alas, that love, so gentle in his view, Should be so tyrannous and rough in proof!",
+            "No, coz, I rather weep."
+        ]
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+    91.461 Assignment 9:  Scrabble
+          Zachary Wong, UMass Lowell Computer Science, zwong@cs.uml.edu
+          Copyright (c) 2015 by Zachary Wong.  All rights reserved.  
+
+    CHANGELOG:
+    11/06/15:  Document Created
+    11/07/15:  Implemented more draggable and droppable features.
+    11/08/15:  More pain and suffering.  Not a lot was finished.
+    11/09/15:  send help pls.
+-->
+<html>
+    <head>
+        <title>Scrabble Lite</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--  jQuery UI Theme -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/dark-hive/jquery-ui.min.css">
+        <link rel="stylesheet" href="stylesheets/scrabbleLite_style.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="gameSpace">
+                <div id="rowSpace">
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="doubleTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="tripleTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                </div>
+                <div id="letterSpace">
+                </div>
+            </div>
+            <div id="scoreSpace">
+                <div id="score"></div>
+                <input type="button" value="Restart Game" onClick="window.location.reload()">
+            </div>
+        </div>
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type='text/javascript' src="http://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+        <!-- jQuery UI Library -->
+        <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <!-- Custom jQuery Scripts -->
+        <script type='text/javascript' src="javascript/scrabbleLite.js"></script>
+    </body>
+</html>
