@@ -17,7 +17,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!--  jQuery UI Theme -->
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/dark-hive/jquery-ui.min.css">
-        <link rel="stylesheet" href="stylesheets/scrabbleLite_style.css">
+        <link rel="stylesheet" href="jquery.gridster.min.css">
+        <link rel="stylesheet" href="scrabbleLite_style.css">
     </head>
     <body>
         <div id="wrapper">
@@ -31,12 +32,24 @@
                     <div class="emptyTile" id="tripleTile"></div>
                     <div class="emptyTile" id="gameTile"></div>
                 </div>
+                
+                <div id="rowSpace">
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="doubleTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                    <div class="emptyTile" id="tripleTile"></div>
+                    <div class="emptyTile" id="gameTile"></div>
+                </div>
+                
                 <div id="letterSpace">
                 </div>
             </div>
             <div id="scoreSpace">
                 <div id="score"></div>
                 <input type="button" value="Restart Game" onClick="window.location.reload()">
+                <p>Currently, the scoring system is not 100% correct.</p>
             </div>
         </div>
         <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -44,6 +57,6 @@
         <!-- jQuery UI Library -->
         <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
         <!-- Custom jQuery Scripts -->
-        <script type='text/javascript' src="javascript/scrabbleLite.js"></script>
+        <script type='text/javascript' src="scrabbleLite.js"></script>
     </body>
 </html>

@@ -28,6 +28,10 @@ body {  min-width:1500px; }
     text-align: center;
 }
 
+#rowSpace {
+    display: inline-block;
+}
+
 /*Normal empty scrabble tile*/
 #gameTile {
     background-image:url(ScrabbleImages/plain_square.png);
@@ -48,6 +52,13 @@ body {  min-width:1500px; }
 
 /*empty tile properties*/
 .emptyTile{
+    margin-top: 50px;
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+}
+
+.rackSpace{
     margin-top: 50px;
     display: inline-block;
     height: 100px;
